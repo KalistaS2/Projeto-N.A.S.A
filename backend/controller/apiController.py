@@ -3,14 +3,17 @@ from fastapi import APIRouter, HTTPException
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel
 
-# Importação do serviço de pesquisa
+# Importação do services da aplicação
+from backend.service.datasetService import DatasetService
 from backend.service.pesquisaService import PesquisaService
+
+
 class apiController:
     router = APIRouter()
 
     class PesquisaRequest(BaseModel):
         texto: str
-        numero: int
+        numero: float
 
     @router.post("/pesquisar")
     async def predict(body: PesquisaRequest):
