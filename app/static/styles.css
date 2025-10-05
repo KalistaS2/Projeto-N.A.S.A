@@ -1,0 +1,145 @@
+/* ... seus estilos anteriores ... */
+
+body {
+    background-color: #1a202c;
+    color: #cbd5e0;
+    font-family: sans-serif;
+    /* Removido text-align: center para alinhar o conteúdo do dashboard à esquerda */
+    padding-top: 20px;
+}
+
+.main-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: justify;
+}
+
+h1, h2 {
+    color: #edf2f7;
+    border-bottom: 2px solid #4a5568;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* --- Estilos do Dashboard --- */
+
+/* Estilo base para todos os 'cards' */
+.card {
+    background-color: #2d3748;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo específico para o card de resumo */
+#summaryCard h3 {
+    margin-top: 0;
+    color: #a0aec0;
+}
+
+#summaryCard p {
+    font-size: 1.1em;
+    color: #e2e8f0;
+}
+
+.vertente-badge {
+    display: inline-block;
+    background-color: #4a5568;
+    color: #e2e8f0;
+    padding: 5px 10px;
+    border-radius: 12px;
+    font-size: 0.8em;
+    font-weight: bold;
+
+}
+
+/* Estilo para cada card de artigo */
+.article-card {
+    transition: transform 0.2s ease-in-out;
+}
+
+.article-card:hover {
+    transform: translateY(-5px); /* Efeito de elevação ao passar o mouse */
+}
+
+.article-card h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #a0aec0;
+}
+
+.article-link {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #3182ce;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.article-link:hover {
+    background-color: #2b6cb0;
+}
+
+/* Define um modelo de caixa mais previsível para todos os elementos */
+* {
+  box-sizing: border-box;
+}
+
+body {
+    background-color: #1a202c;
+    color: #cbd5e0;
+    font-family: sans-serif;
+    text-align: center;
+    padding-top: 50px;
+}
+
+#divBusca {
+    background-color: #2F4F4F;
+    border: solid 1px #1a202c;
+    border-radius: 10px;
+    width: 350px;
+    height: 40px;
+    padding: 5px 10px;
+    
+    margin: 30px auto;
+
+    display: flex;
+    align-items: center;
+}
+
+#txtBusca {
+    flex-grow: 1; 
+    background-color: transparent;
+    font-style: italic;
+    font-size: 18px;
+    color: #cbd5e0;
+    border: none;
+    outline: none;
+    height: 100%;
+}
+
+#txtBusca::placeholder {
+    color: #929aab;
+}
+
+#btnBusca {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    /* Alinha a imagem verticalmente caso haja diferença de altura */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0; /* Remove preenchimento padrão do botão */
+}
+
+/* NOVA REGRA: Estiliza a imagem dentro do botão de busca */
+#btnBusca img {
+    height: 20px; /* Define a altura da imagem da lupa */
+    width: auto;  /* Mantém a proporção da imagem */
+}

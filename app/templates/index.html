@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard de Resultados - N.A.S.A.</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="main-container">
+        <h1>Dashboard de Resultados da Busca</h1>
+        
+        <div id="dashboard">
+            
+            <div id="summaryCard" class="card">
+                </div>
+
+            <h2>Artigos Vertentes</h2>
+            
+            <div id="articlesContainer">
+                </div>
+
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='dashboard.js') }}"></script>
+</body>
+</html>
