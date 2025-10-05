@@ -8,7 +8,7 @@ import time
 class DatasetService:
     # Função para criar o dataset a partir do arquivo CSV
     def puxar_dados(self):
-        caminho_do_csv = 'data.csv'
+        caminho_do_csv = 'SB_publication_PMC.csv'
         nome_do_arquivo_de_saida = 'resultados_artigos.csv'
         DatasetService.extrair_discussoes_conclusoes(caminho_do_csv, nome_do_arquivo_de_saida)
 
