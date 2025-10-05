@@ -1,21 +1,29 @@
-# 1. Importa a classe Flask e a função render_template
-from flask import Flask, render_template
+from flask import Flask, render_template, request, json
 
-# 2. Cria uma instância da aplicação Flask
-# __name__ é uma variável especial em Python que aponta para o nome do módulo atual
 app = Flask(__name__)
 
-# 3. Define uma rota (URL) usando um decorador
-# O decorador @app.route('/') diz ao Flask que a função 'home' deve ser executada
-# quando alguém acessar a página inicial do site
+def realizar_busca(query):
+    try:
+        with open('mockdata.json', 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        if query.lower() in data['resumoResultado'].lower():
+            return data
+        artigos_filtrados = [artigo for artigo in data['artigos'] if query.lower() in artigo['titulo'].lower()]
+        if artigos_filtrados:
+            return {"resumoResultado": f"Exibindo {len(artigos_filtrados)} artigos para '{query}'", "artigos": artigos_filtrados}
+    except FileNotFoundError:
+        return None
+    return None
+
 @app.route('/')
 def home():
-    # 4. Renderiza o arquivo HTML localizado na pasta 'templates'
     return render_template('index.html')
 
-# 5. Ponto de entrada para executar a aplicação
-# Este bloco só será executado se o script for chamado diretamente
+@app.route('/search')
+def search():
+    query = request.args.get('query', '')
+    resultados = realizar_busca(query) or {"resumoResultado": "Nenhum resultado encontrado."}
+    return render_template('dashboard.html', query=query, resultados=resultados)
+
 if __name__ == '__main__':
-    # Inicia o servidor de desenvolvimento do Flask
-    # debug=True permite que o servidor reinicie automaticamente após alterações no código
     app.run(debug=True)

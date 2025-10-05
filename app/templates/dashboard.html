@@ -6,6 +6,12 @@
     <title>Dashboard de Resultados - N.A.S.A.</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
+    <div id="divBusca">
+      <input type="text" id="txtBusca" placeholder="Buscar..."/>
+      <button id="btnBusca">
+        <img src="{{ url_for('static', filename='lupa.png') }}" alt="Buscar">
+      </button>
+    </div>
 <body>
     <div class="main-container">
         <h1>Dashboard de Resultados da Busca</h1>

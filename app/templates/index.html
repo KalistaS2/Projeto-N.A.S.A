@@ -3,26 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard de Resultados - N.A.S.A.</title>
+    <title>Ajuda AI</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
-    <div class="main-container">
-        <h1>Dashboard de Resultados da Busca</h1>
-        
-        <div id="dashboard">
-            
-            <div id="summaryCard" class="card">
-                </div>
+    <h1>Nebulosa Maníaca</h1>
+    <p>Ajuda AI</p>
 
-            <h2>Artigos Vertentes</h2>
-            
-            <div id="articlesContainer">
-                </div>
-
-        </div>
+<form method="GET" action="/search">
+    <div id="divBusca">
+        <input type="text" id="txtBusca" name="query" placeholder="Pesquise artigos...">
+        <button type="submit" id="btnBusca"><img src="/static/lupa.png" alt="Buscar"></button>
     </div>
+</form>
 
-    <script src="{{ url_for('static', filename='dashboard.js') }}"></script>
 </body>
 </html>
