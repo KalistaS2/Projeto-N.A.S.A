@@ -1,0 +1,4 @@
+fastapi
+pydantic
+deep_translator
+spacy
