@@ -1,0 +1,12 @@
+{
+  "timestamp": "2025-10-05T03:46:35.634954",
+  "model_used": "allenai-specter",
+  "total_pdfs": 73,
+  "processed_pdfs": 73,
+  "relevance_weight": 0.7,
+  "impact_weight": 0.3,
+  "parameters": {
+    "similarity_threshold": 0.3,
+    "pagerank_alpha": 0.85
+  }
+}
